@@ -1,0 +1,25 @@
+{
+  "name": "dutils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc-watch --onSuccess \"node .\"",
+    "start": "npx tsc | node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^16.4.1",
+    "dotenv": "^10.0.0",
+    "tsc-watch": "^4.4.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "mongoose": "^5.13.3"
+  }
+}

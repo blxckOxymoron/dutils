@@ -1,0 +1,14 @@
+{
+    "extends": "@tsconfig/node14/tsconfig.json",
+    "include": ["src/**/*"],
+    "compilerOptions": {
+        "outDir": "src/dist",
+        // "baseUrl": "./src",
+        // "paths": {
+        //     "@models/*": ["ts/models/*", "dist/models/*"],
+        //     "@commands/*": ["ts/commands/*", "dist/commands/*"],
+        //     "@code/*": ["ts/*", "dist/*"]
+        // },
+        "watch": false
+    }
+}

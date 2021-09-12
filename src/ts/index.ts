@@ -127,6 +127,7 @@ async function handleNewGuild (guild: Guild) {
     })
     await newGuild.save()
     guildCache.set(guild.id, newGuild)
+    guild.me?.setNickname(`〈${newGuild.get("prefix")}〉 DUtils`)
 }
 
 function unicodeValue (s: string) {
@@ -140,4 +141,4 @@ const dbOptions = {
     useNewUrlParser: true
 }
 
-process.env.DB_CONNECT ? mongoose.connect(process.env.DB_CONNECT, dbOptions, () => console.log("Database connected")) : console.error("db connection undefined")
+process.env.DB_CONNECT ? mongoose.connect(process.env.DB_CONNECT, dbOptions, (err) => err ? console.error(err) : console.log("Database connected")) : console.error("db connection undefined")

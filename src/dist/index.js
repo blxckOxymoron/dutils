@@ -114,6 +114,7 @@ async function handleNewGuild(guild) {
     });
     await newGuild.save();
     exports.guildCache.set(guild.id, newGuild);
+    guild.me?.setNickname(`〈${newGuild.get("prefix")}〉 DUtils`);
 }
 function unicodeValue(s) {
     return s.split("").reduce((res, val) => res + val.charCodeAt(0), 0);
@@ -123,4 +124,4 @@ const dbOptions = {
     useUnifiedTopology: true,
     useNewUrlParser: true
 };
-process.env.DB_CONNECT ? mongoose_1.default.connect(process.env.DB_CONNECT, dbOptions, () => console.log("Database connected")) : console.error("db connection undefined");
+process.env.DB_CONNECT ? mongoose_1.default.connect(process.env.DB_CONNECT, dbOptions, (err) => err ? console.error(err) : console.log("Database connected")) : console.error("db connection undefined");
